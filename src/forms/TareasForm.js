@@ -36,7 +36,7 @@ class TareasForm extends Component {
             onChange={e => this.handleChange(e)}
           />
         </FormGroup>
-        <Button className="float-right" color="success">
+        <Button className="float-right" color="success" disabled={!this.state.tareaNueva.trim()}>
           Agregar Tarea
         </Button>
       </Form>

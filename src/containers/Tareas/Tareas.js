@@ -1,22 +1,16 @@
 import React, { Component } from "react";
 import TareasForm from "./../../forms/TareasForm";
 import { TableCmp } from "./../../components";
-import TareasApi from "./../../services/tareas.service";
 
 class Tareas extends Component {
   state = {
     tareas: []
   };
-  async componentWillMount() {
-    setTimeout(() => {
-      this.setState({
-        tareas: TareasApi
-      });
-    }, 7000);
-  }
+  
   numeroAleatorio = (min, max) => {
     return Math.round(Math.random() * (max - min) + min);
   };
+  
   borrarTarea = index => {
     const { tareas } = this.state;
 
@@ -26,7 +20,9 @@ class Tareas extends Component {
       })
     });
   };
+  
   agregarTarea = tarea => {
+    console.log('agregarTarea', tarea);
     this.setState({
       tareas: [
         ...this.state.tareas,
@@ -34,6 +30,7 @@ class Tareas extends Component {
       ]
     });
   };
+  
   render() {
     const { tareas } = this.state;
     return (
