@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Header } from "./components";
-import { Tareas } from "./containers";
+// import { Tareas } from "./containers";
+import { Contacts } from "./containers";
 class App extends Component {
   render() {
     return (
       <div>
         <Header />
-        <Tareas />
+        {/* <Tareas /> */}
+        <Contacts title="Profiles" />
       </div>
     );
   }
